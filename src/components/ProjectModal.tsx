@@ -73,7 +73,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               {/* Image */}
               <div className="relative w-full h-52 md:h-72 shrink-0 overflow-hidden">
                 <Image
-                  src={project.image}
+                  src={("modalImage" in project && (project as { modalImage?: string }).modalImage) || project.image}
                   alt={project.title}
                   fill
                   className="object-cover"
@@ -145,15 +145,17 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                       <SiGithub size={14} />
                       {t.projects.viewCode}
                     </a>
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-accent-teal text-white text-sm font-semibold hover:bg-accent-teal/90 transition-all duration-200 shadow-lg shadow-accent-teal/20"
-                    >
-                      <ArrowUpRight size={14} />
-                      {t.projects.viewDemo}
-                    </a>
+                    {project.demoUrl && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-accent-teal text-white text-sm font-semibold hover:bg-accent-teal/90 transition-all duration-200 shadow-lg shadow-accent-teal/20"
+                      >
+                        <ArrowUpRight size={14} />
+                        {t.projects.viewDemo}
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

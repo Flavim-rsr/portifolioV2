@@ -173,7 +173,7 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 3.9 }}
-                className="flex items-center gap-4"
+                className="flex flex-wrap items-center gap-4"
               >
                 {[
                   { icon: SiGithub, href: "https://github.com/Flavim-rsr", label: "GitHub" },
@@ -196,6 +196,24 @@ export default function Hero() {
                   @Flavim-rsr
                 </span>
               </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 4.1, duration: 0.6 }}
+                onClick={() => scrollTo("about")}
+                className="md:hidden mt-10 flex flex-col items-center gap-2 text-muted-foreground cursor-pointer hover:text-accent-teal transition-colors duration-200"
+              >
+                <span className="text-xs tracking-widest uppercase font-medium">
+                  {t.hero.scrollDown}
+                </span>
+                <motion.div
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <ArrowDown size={16} />
+                </motion.div>
+              </motion.div>
             </div>
 
             {/* Right: Card Stack */}
@@ -216,7 +234,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 4.1, duration: 0.6 }}
           onClick={() => scrollTo("about")}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground cursor-pointer hover:text-accent-teal transition-colors duration-200"
+          className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-muted-foreground cursor-pointer hover:text-accent-teal transition-colors duration-200"
         >
           <span className="text-xs tracking-widest uppercase font-medium">{t.hero.scrollDown}</span>
           <motion.div

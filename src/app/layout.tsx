@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     "Portfólio de Flavio Rodrigo de Souza Ribeiro, Desenvolvedor Full Stack especializado em React, Next.js, Node.js e Java.",
   keywords: ["Full Stack Developer", "React", "Next.js", "TypeScript", "Node.js"],
   icons: {
-    icon: "/brand-icon.svg",
-    shortcut: "/brand-icon.svg",
-    apple: "/brand-icon.svg",
+    icon: "/icons/brand-icon.svg",
+    shortcut: "/icons/brand-icon.svg",
+    apple: "/icons/brand-icon.svg",
   },
 };
 

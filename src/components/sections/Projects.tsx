@@ -136,18 +136,28 @@ export default function Projects() {
                     <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                       <a
                         href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
                         className="p-2 rounded-full bg-background border border-border hover:border-accent-teal/40 hover:text-accent-teal transition-all duration-200"
                       >
                         <SiGithub size={13} />
                       </a>
-                      <a
-                        href={project.demoUrl}
-                        onClick={(e) => e.stopPropagation()}
-                        className="p-2 rounded-full bg-accent-teal text-white hover:bg-accent-teal/90 transition-all duration-200"
-                      >
-                        <ArrowUpRight size={14} />
-                      </a>
+                      {project.demoUrl ? (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="p-2 rounded-full bg-accent-teal text-white hover:bg-accent-teal/90 transition-all duration-200"
+                        >
+                          <ArrowUpRight size={14} />
+                        </a>
+                      ) : (
+                        <span className="p-2 invisible" aria-hidden>
+                          <ArrowUpRight size={14} />
+                        </span>
+                      )}
                     </div>
                   </div>
                 </motion.div>
@@ -156,33 +166,39 @@ export default function Projects() {
 
             {/* Floating image that follows cursor */}
             <AnimatePresence>
-              {hoveredIndex !== null && !selectedProject && (
-                <motion.div
-                  key={hoveredIndex}
-                  initial={{ opacity: 0, scale: 0.92 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.92 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="fixed z-50 pointer-events-none"
-                  style={{
-                    left: mousePos.x + 24,
-                    top: mousePos.y - 120,
-                    width: 340,
-                    height: 210,
-                  }}
-                >
-                  <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-border/20">
-                    <Image
-                      src={projects[hoveredIndex].image}
-                      alt={projects[hoveredIndex].title}
-                      width={340}
-                      height={210}
-                      className="w-full h-full object-cover"
-                      unoptimized
-                    />
-                  </div>
-                </motion.div>
-              )}
+              {hoveredIndex !== null && !selectedProject && (() => {
+                const hovered = projects[hoveredIndex] as typeof projects[number] & { orientation?: string };
+                const isVertical = hovered.orientation === "vertical";
+                const w = isVertical ? 220 : 340;
+                const h = isVertical ? 400 : 210;
+                return (
+                  <motion.div
+                    key={hoveredIndex}
+                    initial={{ opacity: 0, scale: 0.92 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.92 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="fixed z-50 pointer-events-none"
+                    style={{
+                      left: mousePos.x + 24,
+                      top: mousePos.y - h / 2,
+                      width: w,
+                      height: h,
+                    }}
+                  >
+                    <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-border/20">
+                      <Image
+                        src={hovered.image}
+                        alt={hovered.title}
+                        width={w}
+                        height={h}
+                        className="w-full h-full object-cover"
+                        unoptimized
+                      />
+                    </div>
+                  </motion.div>
+                );
+              })()}
             </AnimatePresence>
           </div>
 
@@ -233,18 +249,24 @@ export default function Projects() {
                   <div className="flex gap-2" onClick={(e) => e.stopPropagation()}>
                     <a
                       href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border text-xs font-medium hover:border-accent-teal/40 hover:text-accent-teal transition-all duration-200"
                     >
                       <SiGithub size={12} />
                       {t.projects.viewCode}
                     </a>
-                    <a
-                      href={project.demoUrl}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-teal text-white text-xs font-medium hover:bg-accent-teal/90 transition-all duration-200"
-                    >
-                      <ArrowUpRight size={12} />
-                      {t.projects.viewDemo}
-                    </a>
+                    {project.demoUrl && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-teal text-white text-xs font-medium hover:bg-accent-teal/90 transition-all duration-200"
+                      >
+                        <ArrowUpRight size={12} />
+                        {t.projects.viewDemo}
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>

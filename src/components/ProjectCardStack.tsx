@@ -8,7 +8,7 @@ import { projects } from "@/lib/data";
 
 type Project = (typeof projects)[number];
 
-const STACK = projects.slice(0, 5);
+const STACK = projects.slice(0, 6);
 
 function scrollToProjects() {
   document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
@@ -93,10 +93,23 @@ export default function ProjectCardStack() {
   const getCard = (offset: number) => STACK[(index + offset) % total];
   const next = () => setIndex((prev) => (prev + 1) % total);
 
+  const topOrientation = "orientation" in getCard(0) ? (getCard(0) as { orientation?: string }).orientation : undefined;
+  const size =
+    topOrientation === "horizontal"
+      ? { width: 380, height: 260 }
+      : topOrientation === "vertical"
+      ? { width: 240, height: 440 }
+      : { width: 300, height: 380 };
+
   return (
     <div className="flex flex-col items-center gap-4 select-none">
       {/* Stack container */}
-      <div className="relative" style={{ width: 300, height: 380 }}>
+      <motion.div
+        className="relative"
+        animate={size}
+        transition={{ type: "spring", stiffness: 200, damping: 30 }}
+        style={size}
+      >
         {/* Card 3 — furthest back */}
         <motion.div
           className="absolute inset-0 rounded-2xl overflow-hidden border border-white/10 shadow-xl"
@@ -129,7 +142,7 @@ export default function ProjectCardStack() {
 
         {/* Top card — draggable, remounts on each swipe to reset motion values */}
         <DraggableCard key={index} project={getCard(0)} onSwipe={next} />
-      </div>
+      </motion.div>
 
       {/* Indicator dots */}
       <div className="flex items-center gap-1.5">
