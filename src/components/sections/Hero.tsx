@@ -160,7 +160,7 @@ export default function Hero() {
                 </button>
                 <a
                   href="/cv.pdf"
-                  download
+                  download="Flavio-Rodrigo-CV.pdf"
                   className="flex items-center gap-2 px-6 py-3 rounded-full border border-accent-teal/40 text-accent-teal font-semibold text-sm hover:bg-accent-teal/8 transition-all duration-200 hover:-translate-y-0.5"
                 >
                   <Download size={14} />

@@ -108,34 +108,6 @@ export const experiences = [
 
 export const projects = [
   {
-    title: "E-Commerce Platform",
-    slug: "ecommerce",
-    description: {
-      pt: "Plataforma completa de e-commerce com dashboard administrativo, gestão de estoque em tempo real, integração com gateways de pagamento e sistema de avaliações.",
-      en: "Full-featured e-commerce platform with admin dashboard, real-time inventory management, payment gateway integration, and review system.",
-    },
-    tags: ["Next.js", "Node.js", "PostgreSQL", "Stripe"],
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop&auto=format",
-    demoUrl: "#",
-    githubUrl: "#",
-    year: "2024",
-    category: "Full Stack",
-  },
-  {
-    title: "TaskFlow — SaaS de Gestão",
-    slug: "taskflow",
-    description: {
-      pt: "Aplicação SaaS de gestão de tarefas e projetos com colaboração em tempo real, notificações push, dashboards analíticos e integração com Slack e GitHub.",
-      en: "Task and project management SaaS with real-time collaboration, push notifications, analytics dashboards, and Slack & GitHub integrations.",
-    },
-    tags: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=500&fit=crop&auto=format",
-    demoUrl: "#",
-    githubUrl: "#",
-    year: "2024",
-    category: "Full Stack",
-  },
-  {
     title: "Purchase",
     slug: "purchase",
     description: {
