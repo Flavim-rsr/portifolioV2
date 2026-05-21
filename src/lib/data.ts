@@ -25,6 +25,7 @@ export const skills = {
     { name: "Git", icon: "SiGit" },
     { name: "GitHub", icon: "SiGithub" },
     { name: "Figma", icon: "SiFigma" },
+    { name: "Docker", icon: "SiDocker" },
     { name: "VS Code", icon: "SiVisualstudiocode" },
   ],
   mobile: [

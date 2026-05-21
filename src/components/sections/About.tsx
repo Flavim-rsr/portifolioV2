@@ -7,7 +7,7 @@ import {
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiHtml5,
   SiNodedotjs, SiPython, SiPostgresql, SiMysql, SiFirebase,
   SiGit, SiGithub, SiFigma, SiSpringboot,
-  SiPhp, SiFlutter, SiJavascript,
+  SiPhp, SiFlutter, SiJavascript, SiDocker,
 } from "react-icons/si";
 import { FaJava, FaCss3Alt, FaDatabase } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
@@ -30,6 +30,7 @@ const iconMap: Record<string, React.ElementType> = {
   SiGit,
   SiGithub,
   SiFigma,
+  SiDocker,
   SiPhp,
   SiFlutter,
   SiJavascript,
