@@ -109,6 +109,30 @@ export const experiences = [
 
 export const projects = [
   {
+    title: "Rick and Morty",
+    slug: "rick-and-morty",
+    description: {
+      pt: "Aplicação web para consulta de personagens da série Rick and Morty, consumindo a API pública oficial. Permite listar, buscar por nome, filtrar por status, espécie e gênero, favoritar personagens com persistência em LocalStorage e visualizar detalhes completos. Conta com paginação, tema dark/light, modal de preview, tratamento de estados de loading, erro e lista vazia, além de testes automatizados com Vitest.",
+      en: "Web application for browsing Rick and Morty characters, consuming the official public API. Users can list, search by name, filter by status, species, and gender, favorite characters with LocalStorage persistence, and view full details. Includes pagination, dark/light theme, preview modal, loading/error/empty state handling, and automated tests with Vitest.",
+    },
+    tags: [
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "React Query",
+      "Axios",
+      "React Router",
+      "Vitest",
+    ],
+    image: "/projects/rick-and-morty.png",
+    orientation: "horizontal",
+    demoUrl: "https://rickandmortyflavio.vercel.app/",
+    githubUrl: "https://github.com/Flavim-rsr/RickAndMorty",
+    year: "2026",
+    category: "Frontend",
+  },
+  {
     title: "Purchase",
     slug: "purchase",
     description: {
