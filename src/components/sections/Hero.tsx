@@ -159,7 +159,7 @@ export default function Hero() {
                   {t.hero.ctaContact}
                 </button>
                 <a
-                  href="/cv.pdf"
+                  href="/Flavio%20Rodrigo.pdf"
                   download="Flavio Rodrigo.pdf"
                   className="flex items-center gap-2 px-6 py-3 rounded-full border border-accent-teal/40 text-accent-teal font-semibold text-sm hover:bg-accent-teal/8 transition-all duration-200 hover:-translate-y-0.5"
                 >
