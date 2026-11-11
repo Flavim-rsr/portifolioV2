@@ -10,7 +10,7 @@ export const translations = {
       contact: "Contato",
     },
     hero: {
-      role: "Desenvolvedor Full Stack",
+      role: "AI Engineer",
       description:
         "Desenvolvedor Full Stack focado em construir aplicações web modernas, escaláveis e orientadas a negócio. Tenho experiência no desenvolvimento de sistemas complexos, atuando desde a interface até integrações com APIs e regras de negócio críticas, com foco em performance, usabilidade e evolução contínua do produto.",
       ctaProjects: "Ver Projetos",
@@ -90,7 +90,7 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      role: "Full Stack Developer",
+      role: "AI Engineer",
       description:
         "Full Stack Developer focused on building modern, scalable, business-driven web applications. I have experience developing complex systems, working from the interface to API integrations and critical business logic, with a focus on performance, usability, and continuous product evolution.",
       ctaProjects: "View Projects",

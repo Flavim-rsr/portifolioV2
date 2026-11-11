@@ -36,13 +36,27 @@ export const skills = {
 
 export const experiences = [
   {
+    company: "Lev Negócios",
+    role: {
+      pt: "AI Engineer",
+      en: "AI Engineer",
+    },
+    period: "Set 2026 — Presente",
+    periodEn: "Sep 2026 — Present",
+    description: {
+      pt: "Como AI Engineer na Lev, aprofundo meus conhecimentos em Python, boas práticas e organização de código. Minha trilha técnica inclui embeddings e bancos vetoriais como o Weaviate para busca semântica e RAG; processamento de dados com Pandas e PySpark; orquestração com Airflow, incluindo DAGs, agendamento e tratamento de falhas; e criação de agentes com Python e a API da OpenAI, explorando function calling, engenharia de prompt e gerenciamento de contexto.",
+      en: "As an AI Engineer at Lev, I am deepening my knowledge of Python, best practices, and code organization. My technical focus includes embeddings and vector databases such as Weaviate for semantic search and RAG; data processing with Pandas and PySpark; orchestration with Airflow, including DAGs, scheduling, and failure handling; and building agents with Python and the OpenAI API, exploring function calling, prompt engineering, and context management.",
+    },
+    tags: ["Python", "Weaviate", "Embeddings", "RAG", "Pandas", "PySpark", "Airflow", "OpenAI API"],
+  },
+  {
     company: "Lote Mobile",
     role: {
       pt: "Desenvolvedor Front-end",
       en: "Front-end Developer",
     },
-    period: "Set 2025 — Presente",
-    periodEn: "Sep 2025 — Present",
+    period: "Set 2025 — Set 2026",
+    periodEn: "Sep 2025 — Sep 2026",
     description: {
       pt: "Atuo no desenvolvimento e evolução de um sistema de gestão de lotes, sendo responsável pela implementação e otimização de relatórios complexos envolvendo vendas, previsões financeiras e contas a pagar. Construo novas features, integrações externas e melhorias de UX, garantindo responsividade para mobile e tablet. Trabalho com React em SPA, utilizando Vite, React Router DOM, Context API e hooks customizados. Utilizo PrimeReact para componentes ricos como DataTables, modais e formulários, com exportações para Excel e PDF. Integro APIs REST com cache e tratamento de fluxos de negócio complexos.",
       en: "Working on the development and evolution of a lot management system, responsible for implementing and optimizing complex reports involving sales, financial forecasts, and accounts payable. Build new features, external integrations, and UX improvements, ensuring responsiveness for mobile and tablet. Work with React SPA using Vite, React Router DOM, Context API, and custom hooks. Use PrimeReact for rich components like DataTables, modals, and forms, with Excel and PDF exports. Integrate REST APIs with caching and complex business flow handling.",
